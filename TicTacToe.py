@@ -32,9 +32,24 @@ Button= [button1, button2, button3, button4, button5, button6, button7, button8,
 click = True
 print(Button)
 def player(bout):
+    
     bout["text"]= "X"
     Button.remove(bout)
+    if len(Button) == 0:
+        tkinter.messagebox.showinfo("info", "PLS restart")
+    else:
+        button_2 =random.choice(Button)
+        button_2['text'] = "O"
+        Button.remove(button_2)
+    game()
     
-    button_2 =random.choice(Button)
-    button_2['text'] = "O"
-    Button.remove(button_2)
+def game():
+    if (button1['text'] and button2['text'] and button3['text'] == 'X') or (button4['text'] and button5['text'] and button6['text'] == 'X') or (button7['text'] and button8['text'] and button9['text'] == 'X') or (button1['text'] and button4['text'] and button7['text'] == 'X') or (button2['text'] and button5['text'] and button8['text'] == 'X') or (button3['text'] and button6['text'] and button9['text'] == 'X') or (button1['text'] and button5['text'] and button9['text'] == 'X') or (button3['text'] and button5['text'] and button7['text'] == 'X') :
+           tkinter.messagebox.showinfo("info", "you won")
+           
+
+    elif (button1['text'] and button2['text'] and button3['text'] == 'O') or (button4['text'] and button5['text'] and button6['text'] == 'O') or (button7['text'] and button8['text'] and button9['text'] == 'O') or (button1['text'] and button4['text'] and button7['text'] == 'O') or (button2['text'] and button5['text'] and button8['text'] == 'O') or (button3['text'] and button6['text'] and button9['text'] == 'O') or (button1['text'] and button5['text'] and button9['text'] == 'O') or (button3['text'] and button5['text'] and button7['text'] == 'O') :
+             tkinter.messagebox.showinfo('info', 'you Lost')
+             
+            
+           
