@@ -6,6 +6,8 @@ root = Tk()
 root.title("TIC TAC TOE")
 root.geometry('400x100')
 
+
+
 button1 = Button(root, text="   ", width=10, command=lambda:player(button1))
 button1.grid(row=1, column=1)
 button2 = Button(root, text=" ", width=10, command=lambda:player(button2))
@@ -34,22 +36,62 @@ print(Button)
 def player(bout):
     
     bout["text"]= "X"
+    bout['state'] = DISABLED
     Button.remove(bout)
     if len(Button) == 0:
         tkinter.messagebox.showinfo("info", "PLS restart")
     else:
         button_2 =random.choice(Button)
         button_2['text'] = "O"
+        button_2['state'] = DISABLED
         Button.remove(button_2)
-    game()
+    rules()
+
+
+def rules():
     
-def game():
-    if (button1['text'] and button2['text'] and button3['text'] == 'X') or (button4['text'] and button5['text'] and button6['text'] == 'X') or (button7['text'] and button8['text'] and button9['text'] == 'X') or (button1['text'] and button4['text'] and button7['text'] == 'X') or (button2['text'] and button5['text'] and button8['text'] == 'X') or (button3['text'] and button6['text'] and button9['text'] == 'X') or (button1['text'] and button5['text'] and button9['text'] == 'X') or (button3['text'] and button5['text'] and button7['text'] == 'X') :
+    if (button1['text'] == 'X' and button2['text'] == 'X' and button3['text'] == 'X'): 
            tkinter.messagebox.showinfo("info", "you won")
            
+    elif (button4['text'] == 'X' and button5['text'] == 'X'and button6['text'] == 'X'):
+           tkinter.messagebox.showinfo("info", "you won")
+    elif (button7['text'] == 'X' and button8['text'] == 'X' and button9['text'] == 'X'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button1['text'] == 'X' and button4['text'] == 'X' and button7['text'] == 'X'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button1['text'] == 'X' and button4['text'] == 'X' and button7['text'] == 'X'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button2['text'] == 'X' and button5['text'] == 'X' and button8['text'] == 'X'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button3['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button1['text'] == 'X' and button5['text'] == 'X' and button9['text'] == 'X'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button3['text'] == 'X' and button5['text'] == 'X' and button7['text'] == 'X'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button3['text'] == 'X' and button5['text'] == 'X' and button7['text'] == 'X'):
+        tkinter.messagebox.showinfo("info", "you won")
 
-    elif (button1['text'] and button2['text'] and button3['text'] == 'O') or (button4['text'] and button5['text'] and button6['text'] == 'O') or (button7['text'] and button8['text'] and button9['text'] == 'O') or (button1['text'] and button4['text'] and button7['text'] == 'O') or (button2['text'] and button5['text'] and button8['text'] == 'O') or (button3['text'] and button6['text'] and button9['text'] == 'O') or (button1['text'] and button5['text'] and button9['text'] == 'O') or (button3['text'] and button5['text'] and button7['text'] == 'O') :
-             tkinter.messagebox.showinfo('info', 'you Lost')
+    if (button1['text'] == 'O' and button2['text']  == 'O' and button3['text'] == 'O'):
+        tkinter.messagebox.showinfo('info', 'you Lost')
+    elif (button4['text'] == 'O' and button5['text'] == 'O'and button6['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button7['text'] == 'O' and button8['text'] == 'O' and button9['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button1['text'] == 'O' and button4['text'] == 'O' and button7['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button1['text'] == 'O' and button4['text'] == 'O' and button7['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button2['text'] == 'O' and button5['text'] == 'O' and button8['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button3['text'] == 'O' and button6['text'] == 'O' and button9['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button1['text'] == 'O' and button5['text'] == 'O' and button9['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button3['text'] == 'O' and button5['text'] == 'O' and button7['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
+    elif (button3['text'] == 'O' and button5['text'] == 'O' and button7['text'] == 'O'):
+        tkinter.messagebox.showinfo("info", "you won")
              
             
            
